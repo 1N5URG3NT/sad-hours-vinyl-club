@@ -1,0 +1,13 @@
+{
+  "name": "sad-hours-vinyl-club",
+  "version": "1.0.0",
+  "description": "Sad Hours Vinyl Club - Premium Custom Vinyl Decals (Real Ecommerce)",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site - no build step required'"
+  },
+  "dependencies": {
+    "stripe": "^14.25.0",
+    "resend": "^3.5.0"
+  }
+}

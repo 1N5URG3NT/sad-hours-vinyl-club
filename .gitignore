@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment variables (important for security)
+.env
+.env.local
+.env.*.local
+
+# Netlify
+.netlify/
+
+# Build / Cache
+dist/
+build/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+*.zip
+*.tar.gz

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — Sad Hours Vinyl Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { background: #0a0a0b; color: #e8e8ea; }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-lg w-full">
+    <div class="text-center mb-8">
+      <div class="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#9f1f2b]/10">
+        <span class="text-6xl">✓</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-[-2px] mb-3">Order Confirmed</h1>
+      <p class="text-xl text-[#9a9aa0]">Thank you. Your decals are now being prepared.</p>
+    </div>
+
+    <div class="bg-[#121214] border border-[#2a2a2f] rounded-2xl p-8 mb-6">
+      <div class="uppercase text-xs tracking-[2px] text-[#9a9aa0] mb-4">WHAT HAPPENS NEXT</div>
+      
+      <div class="space-y-5 text-sm">
+        <div class="flex gap-4">
+          <div class="font-mono text-[#9f1f2b] mt-0.5">01</div>
+          <div>
+            <div class="font-medium">Confirmation Email</div>
+            <div class="text-[#9a9aa0]">You’ll receive a detailed receipt at the email you provided.</div>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="font-mono text-[#9f1f2b] mt-0.5">02</div>
+          <div>
+            <div class="font-medium">Production (1–3 business days)</div>
+            <div class="text-[#9a9aa0]">Your decals are cut on premium 3M / Oracal cast vinyl in our shop.</div>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="font-mono text-[#9f1f2b] mt-0.5">03</div>
+          <div>
+            <div class="font-medium">Shipping &amp; Tracking</div>
+            <div class="text-[#9a9aa0]">We ship within 1–3 days. Tracking is sent the moment your order leaves.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#121214] border border-[#2a2a2f] rounded-2xl p-6 mb-8 text-center">
+      <div class="text-xs uppercase tracking-widest text-[#9a9aa0] mb-1">NEED HELP?</div>
+      <div class="text-sm">
+        Email us anytime at <a href="mailto:orders@sadhoursvinyl.com" class="underline hover:text-white">orders@sadhoursvinyl.com</a>
+      </div>
+      <div class="text-[10px] text-[#666] mt-3 tracking-wider">Reference your Stripe receipt for the fastest reply.</div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/" class="btn btn-primary flex-1 py-3.5">BACK TO THE SHOP</a>
+      <a href="/#shop" class="btn btn-secondary flex-1 py-3.5">BROWSE MORE DECALS</a>
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-xs text-[#666] tracking-[2px]">NO CHEAP SHIT. NO FADING. NO APOLOGIES.</p>
+    </div>
+  </div>
+
+  <script>
+    // Clear cart on successful purchase
+    localStorage.removeItem('shvc_cart');
+
+    // Basic safety: if someone lands here without coming from Stripe, still show helpful content
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.get('session_id')) {
+      console.log('%c[Sad Hours] Success page loaded without session_id — possible direct visit', 'color:#666');
+    }
+  </script>
+</body>
+</html>

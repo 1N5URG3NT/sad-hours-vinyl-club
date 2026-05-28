@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sad Hours Vinyl Club — Premium Custom Vinyl Decals</title>
+  <meta name="description" content="Tactical-grade custom vinyl decals for cars, trucks, businesses, and the unapologetic. Built to last. No cheap shit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --accent: #9f1f2b;
+    }
+    
+    body {
+      background: #0a0a0b;
+      color: #e8e8ea;
+    }
+    
+    .tactical-text {
+      font-feature-settings: "tnum";
+    }
+
+    .section-header {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #9a9aa0;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.1s ease;
+    }
+    
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #9f1f2b;
+      transition: width 0.2s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+
+    .hero-bg {
+      background: linear-gradient(rgba(10,10,11,0.55), rgba(10,10,11,0.75)), url('https://picsum.photos/id/1016/2000/1200');
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0b]/95 backdrop-blur-lg border-b border-[#1f1f23]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 bg-[#9f1f2b] flex items-center justify-center rounded-sm">
+          <span class="text-white text-[13px] font-bold tracking-[-1px]">SH</span>
+        </div>
+        <div>
+          <div class="font-bold tracking-[-0.5px] text-lg">SAD HOURS</div>
+          <div class="text-[9px] text-[#9a9aa0] -mt-1 font-mono tracking-[2px]">VINYL CLUB</div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-9 text-sm font-medium">
+        <a href="#shop" class="nav-link text-sm">SHOP</a>
+        <a href="#how" class="nav-link text-sm">HOW IT WORKS</a>
+        <a href="#gallery" class="nav-link text-sm">GALLERY</a>
+        <a href="#faq" class="nav-link text-sm">FAQ</a>
+        <a href="#contact" class="nav-link text-sm">CONTACT</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button onclick="openCustomModal()" 
+                class="hidden md:flex btn btn-accent text-xs px-5 py-2.5">
+          START CUSTOM ORDER
+        </button>
+        
+        <!-- Cart -->
+        <button onclick="openCartDrawer()" 
+                class="relative flex items-center justify-center w-11 h-11 hover:bg-[#1a1a1d] rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cart-count" 
+                class="hidden absolute -top-1 -right-1 min-w-[17px] h-[17px] px-1 text-[10px] font-mono bg-[#9f1f2b] text-white rounded-full flex items-center justify-center"></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <button id="mobile-nav-toggle"
+                class="md:hidden w-10 h-10 flex items-center justify-center hover:bg-[#1a1a1d] rounded">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" class="mobile-nav hidden md:hidden fixed inset-0 top-[79px] bg-[#0a0a0b] z-50 px-6 py-8 text-lg border-t border-[#1f1f23]">
+      <div class="flex flex-col gap-2 text-lg">
+        <a href="#shop" class="py-3 border-b border-[#1f1f23]">Shop Decals</a>
+        <a href="#how" class="py-3 border-b border-[#1f1f23]">How It Works</a>
+        <a href="#gallery" class="py-3 border-b border-[#1f1f23]">Real Builds</a>
+        <a href="#faq" class="py-3 border-b border-[#1f1f23]">FAQ</a>
+        <a href="#contact" class="py-3 border-b border-[#1f1f23]">Contact</a>
+        
+        <div class="pt-4">
+          <button onclick="openCustomModal(); document.getElementById('mobile-nav').classList.add('hidden')" 
+                  class="btn btn-accent w-full py-3.5">START CUSTOM ORDER</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-bg h-[100dvh] min-h-[640px] flex items-center pt-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <div class="inline-block px-4 py-1 rounded-full border border-[#9f1f2b]/60 text-xs tracking-[3px] mb-6 text-[#c5a46e]">EST 2017 • UNITED STATES</div>
+        
+        <h1 class="text-6xl md:text-7xl font-bold tracking-[-3.5px] leading-none mb-6">
+          VINYL THAT<br>DOESN'T QUIT.
+        </h1>
+        
+        <p class="max-w-md text-xl text-[#c8c8cc] tracking-[-0.2px]">
+          Premium custom decals for people who build, ride, and refuse to blend in.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-9">
+          <a href="#shop" 
+             class="btn btn-primary text-base px-8 py-4">
+            SHOP THE COLLECTION
+          </a>
+          <button onclick="openCustomModal()" 
+                  class="btn btn-secondary text-base px-8 py-4">
+            START A CUSTOM PROJECT
+          </button>
+        </div>
+
+        <div class="flex gap-7 text-xs mt-12 text-[#9a9aa0] tracking-widest font-mono">
+          <div>WEATHERPROOF</div>
+          <div>5–7 YR OUTDOOR</div>
+          <div>MADE IN USA</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST BAR -->
+  <div class="border-b border-t border-[#1f1f23] bg-[#0a0a0b]">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-wrap justify-center md:justify-between gap-x-10 gap-y-2 text-xs text-[#9a9aa0] tracking-[1.5px] font-medium">
+      <div>3M &amp; ORACAL CAST VINYL ONLY</div>
+      <div>NO CHINESE THIN FILM</div>
+      <div>REAL PEOPLE. REAL CUTS.</div>
+      <div>SHIPS IN 1–3 DAYS</div>
+    </div>
+  </div>
+
+  <!-- SHOP SECTION -->
+  <section id="shop" class="max-w-7xl mx-auto px-6 pt-20 pb-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9">
+      <div>
+        <div class="section-header mb-3">THE COLLECTION</div>
+        <h2 class="text-5xl font-bold tracking-[-2.5px]">Built for the Road.<br>Made to Last.</h2>
+      </div>
+      <div class="max-w-xs text-[#9a9aa0]">
+        Every decal is printed on premium cast vinyl and cut with precision. These aren’t hobby shop stickers.
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between mb-6 pt-3">
+      <div class="flex flex-wrap gap-2">
+        <button class="filter-pill active" data-category="All">ALL</button>
+        <button class="filter-pill" data-category="Car & Truck">CAR &amp; TRUCK</button>
+        <button class="filter-pill" data-category="Business & Signage">BUSINESS</button>
+        <button class="filter-pill" data-category="Helmets & Gear">HELMETS &amp; GEAR</button>
+        <button class="filter-pill" data-category="Sticker Packs">PACKS</button>
+        <button class="filter-pill" data-category="Custom Shapes">CUSTOM</button>
+      </div>
+
+      <div class="flex gap-3 w-full lg:w-auto">
+        <input id="search-input" 
+               type="text" 
+               placeholder="SEARCH DECALS..." 
+               class="input flex-1 lg:w-72 text-sm">
+        
+        <select id="sort-select" class="input text-sm w-40">
+          <option value="featured">FEATURED</option>
+          <option value="price-low">PRICE: LOW TO HIGH</option>
+          <option value="price-high">PRICE: HIGH TO LOW</option>
+          <option value="name">A — Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="text-center mt-12">
+      <button onclick="openCustomModal()" class="btn btn-accent px-9 py-3.5">
+        NEED SOMETHING TRULY CUSTOM?
+      </button>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="bg-[#111113] border-y border-[#1f1f23]">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+        <div class="section-header mb-3">THE PROCESS</div>
+        <h3 class="text-4xl font-bold tracking-[-1.5px]">From idea to your garage in under a week.</h3>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-[#0a0a0b] border border-[#1f1f23] p-7 rounded-xl">
+          <div class="text-[#9f1f2b] font-mono text-xs tracking-[3px] mb-4">01</div>
+          <div class="font-semibold text-xl mb-3">SEND YOUR IDEA</div>
+          <p class="text-sm text-[#9a9aa0]">Upload your sketch, logo, or just describe what you want. We reply fast with a quote and proof.</p>
+        </div>
+        <div class="bg-[#0a0a0b] border border-[#1f1f23] p-7 rounded-xl">
+          <div class="text-[#9f1f2b] font-mono text-xs tracking-[3px] mb-4">02</div>
+          <div class="font-semibold text-xl mb-3">WE VECTOR &amp; PROOF</div>
+          <p class="text-sm text-[#9a9aa0]">Every custom piece gets hand-traced into clean vectors. You approve the proof before we cut anything.</p>
+        </div>
+        <div class="bg-[#0a0a0b] border border-[#1f1f23] p-7 rounded-xl">
+          <div class="text-[#9f1f2b] font-mono text-xs tracking-[3px] mb-4">03</div>
+          <div class="font-semibold text-xl mb-3">WE PRINT &amp; CUT</div>
+          <p class="text-sm text-[#9a9aa0]">Premium 3M or Oracal cast vinyl. We laminate for extra UV and abrasion protection.</p>
+        </div>
+        <div class="bg-[#0a0a0b] border border-[#1f1f23] p-7 rounded-xl">
+          <div class="text-[#9f1f2b] font-mono text-xs tracking-[3px] mb-4">04</div>
+          <div class="font-semibold text-xl mb-3">SHIPS FAST</div>
+          <p class="text-sm text-[#9a9aa0]">Most orders leave our shop in 1–3 business days. Includes full install instructions and tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="flex flex-col md:flex-row md:items-end gap-4 mb-9">
+      <div class="flex-1">
+        <div class="section-header mb-3">REAL BUILDS</div>
+        <h3 class="text-4xl font-bold tracking-[-2px]">These live on the road.<br>Not in a scrapbook.</h3>
+      </div>
+      <a href="#contact" class="text-sm underline underline-offset-4 text-[#9a9aa0] hover:text-white">SUBMIT YOUR BUILD →</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="gallery-item aspect-[16/10] bg-[#111] rounded-xl overflow-hidden relative">
+        <img src="https://picsum.photos/id/1016/900/600" class="w-full h-full object-cover" alt="Black truck with large skull decal on tailgate">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-5 text-sm">
+          <div class="font-medium">2018 F-250 • DEATH BEFORE DISHONOR (24")</div>
+          <div class="text-xs text-[#9a9aa0]">Matte Black • Owner: Mike R., Montana</div>
+        </div>
+      </div>
+      <div class="gallery-item aspect-[16/10] bg-[#111] rounded-xl overflow-hidden relative">
+        <img src="https://picsum.photos/id/160/900/600" class="w-full h-full object-cover" alt="Welding shop window with large professional lettering">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-5 text-sm">
+          <div class="font-medium">SMITH &amp; CO. WELDING • FULL WINDOW SET</div>
+          <div class="text-xs text-[#9a9aa0]">Black + Amber • 36" tall lettering</div>
+        </div>
+      </div>
+      <div class="gallery-item aspect-[16/10] bg-[#111] rounded-xl overflow-hidden relative">
+        <img src="https://picsum.photos/id/201/900/600" class="w-full h-full object-cover" alt="Custom muscle car with side stripe decals">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-5 text-sm">
+          <div class="font-medium">HARD TIMES STRIPES • '69 CAMARO</div>
+          <div class="text-xs text-[#9a9aa0]">Gloss Black + Red • Full side kit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <div class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="bg-[#111113] border border-[#1f1f23] rounded-2xl p-10 md:p-14">
+      <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+        <div>
+          <div class="section-header mb-4">WHY SAD HOURS</div>
+          <h4 class="font-bold text-3xl tracking-[-1px] leading-tight mb-6">We don’t do hobby vinyl.</h4>
+          <div class="space-y-4 text-[#c8c8cc]">
+            <p>Most “custom” decal shops use cheap calendared film that cracks in a year. We only run 3M 2080 and Oracal 751 cast vinyl — the same stuff the pro wrap shops use.</p>
+            <p>Every order is cut on our own equipment. We stand behind every single piece for the full outdoor lifespan.</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-[#0a0a0b] p-5 rounded-xl border border-[#1f1f23]">
+            <div class="text-4xl font-semibold tabular-nums tracking-tighter">7</div>
+            <div class="text-[#9a9aa0] mt-1 text-xs tracking-widest">YEAR MAX RATING</div>
+          </div>
+          <div class="bg-[#0a0a0b] p-5 rounded-xl border border-[#1f1f23]">
+            <div class="text-4xl font-semibold tabular-nums tracking-tighter">4800+</div>
+            <div class="text-[#9a9aa0] mt-1 text-xs tracking-widest">DECALS IN THE WILD</div>
+          </div>
+          <div class="bg-[#0a0a0b] p-5 rounded-xl border border-[#1f1f23]">
+            <div class="text-4xl font-semibold tabular-nums tracking-tighter">96</div>
+            <div class="text-[#9a9aa0] mt-1 text-xs tracking-widest">HOUR CUSTOM TURNAROUND</div>
+          </div>
+          <div class="bg-[#0a0a0b] p-5 rounded-xl border border-[#1f1f23]">
+            <div class="text-4xl font-semibold tabular-nums tracking-tighter">4</div>
+            <div class="text-[#9a9aa0] mt-1 text-xs tracking-widest">STATES WITH REPEAT FLEETS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="border-t border-[#1f1f23] bg-[#111113]">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="section-header mb-8 text-center">FROM THE FIELD</div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-[#0a0a0b] p-7 rounded-2xl border border-[#1f1f23]">
+          <div class="text-[#9f1f2b] text-4xl mb-4 leading-none">“</div>
+          <p class="text-[#c8c8cc]">My shop truck has 68k miles on it. The lettering still looks brand new. These guys actually use what they sell.</p>
+          <div class="mt-6 text-sm font-medium">— D. Ramirez, Ramco Diesel • Elko, NV</div>
+        </div>
+        <div class="bg-[#0a0a0b] p-7 rounded-2xl border border-[#1f1f23]">
+          <div class="text-[#9f1f2b] text-4xl mb-4 leading-none">“</div>
+          <p class="text-[#c8c8cc]">I put the Till Valhalla set on my helmet and both fairings. Survived two track days and a Montana winter. Zero lifting.</p>
+          <div class="mt-6 text-sm font-medium">— Tyler Voss • Bozeman, MT</div>
+        </div>
+        <div class="bg-[#0a0a0b] p-7 rounded-2xl border border-[#1f1f23]">
+          <div class="text-[#9f1f2b] text-4xl mb-4 leading-none">“</div>
+          <p class="text-[#c8c8cc]">Ordered the full window kit for my welding rig. They turned around the proof in 3 hours and it installed perfect. Will be repeat customers for life.</p>
+          <div class="mt-6 text-sm font-medium">— Marcus Hale, Hale Fabrication</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-3xl mx-auto px-6 py-20">
+    <div class="text-center mb-9">
+      <div class="section-header mb-3">QUESTIONS</div>
+      <h3 class="text-4xl font-bold tracking-[-1.5px]">Common questions from the shop floor.</h3>
+    </div>
+
+    <div class="divide-y divide-[#1f1f23] border-y border-[#1f1f23]">
+      <div>
+        <div class="faq-question py-5 flex justify-between items-center text-lg font-medium">How long do these actually last outdoors?</div>
+        <div class="faq-answer text-[#9a9aa0] pb-6">Our 3M 2080 and Oracal 751 films are rated 5–7 years with proper installation. We’ve seen them go 8+ on daily drivers in harsh climates. We laminate everything we can for extra protection.</div>
+      </div>
+      <div>
+        <div class="faq-question py-5 flex justify-between items-center text-lg font-medium">Do you do full custom designs?</div>
+        <div class="faq-answer text-[#9a9aa0] pb-6">Yes. Send us your sketch, logo file (AI, EPS, PDF, or even a clean phone photo), or just describe what you want. We vector it properly and send a proof for approval before cutting.</div>
+      </div>
+      <div>
+        <div class="faq-question py-5 flex justify-between items-center text-lg font-medium">Can I put these on my motorcycle or helmet?</div>
+        <div class="faq-answer text-[#9a9aa0] pb-6">Absolutely. We have specific high-performance reflective and solvent-resistant films made for that. Just select the “Helmets &amp; Gear” category or tell us in the custom form.</div>
+      </div>
+      <div>
+        <div class="faq-question py-5 flex justify-between items-center text-lg font-medium">What file types work best for custom work?</div>
+        <div class="faq-answer text-[#9a9aa0] pb-6">Vector files (AI, EPS, SVG) are ideal. High-resolution PNGs and clean PDFs also work. We will redraw anything that needs to be vectorized at no extra charge on orders over $65.</div>
+      </div>
+      <div>
+        <div class="faq-question py-5 flex justify-between items-center text-lg font-medium">Do you offer bulk or wholesale pricing?</div>
+        <div class="faq-answer text-[#9a9aa0] pb-6">Yes. Fleets, shops, and clubs get better pricing. Email us directly or use the custom order form and mention quantity. We take care of our people.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="border-t border-[#1f1f23] bg-[#111113]">
+    <div class="max-w-3xl mx-auto px-6 py-20">
+      <div class="text-center mb-10">
+        <div class="section-header mb-3">GET IN TOUCH</div>
+        <h3 class="text-4xl font-bold tracking-[-1.5px]">Questions, fleets, or just want to talk vinyl?</h3>
+      </div>
+
+      <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" id="contact-name" placeholder="YOUR NAME" required class="input">
+          <input type="email" id="contact-email" placeholder="EMAIL ADDRESS" required class="input">
+        </div>
+        
+        <select id="contact-subject" class="input w-full">
+          <option>General Question</option>
+          <option>Custom Project Inquiry</option>
+          <option>Fleet / Wholesale Pricing</option>
+          <option>Order Issue or Question</option>
+          <option>Press / Media</option>
+        </select>
+
+        <textarea id="contact-message" rows="6" placeholder="TELL US WHAT YOU NEED..." required class="input w-full resize-y min-h-[140px]"></textarea>
+
+        <button type="submit" class="btn btn-primary w-full md:w-auto px-16 py-3.5 mt-2">SEND MESSAGE</button>
+        <p class="text-xs text-[#9a9aa0]">We usually reply within a few hours during business days.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="bg-[#0a0a0b] border-t border-[#1f1f23] py-16 text-center">
+    <div class="max-w-md mx-auto px-6">
+      <div class="font-semibold text-2xl tracking-tight mb-3">Ready to put something real on your rig?</div>
+      <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" class="btn btn-primary mt-3 px-10 py-3.5">BROWSE THE COLLECTION</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#1f1f23] text-xs text-[#9a9aa0]">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center justify-between gap-y-3 text-center md:text-left">
+      <div>© SAD HOURS VINYL CLUB — ALL RIGHTS RESERVED</div>
+      <div class="flex gap-x-6 justify-center md:justify-start">
+        <a href="#" class="hover:text-white">INSTAGRAM</a>
+        <a href="#" class="hover:text-white">TIKTOK</a>
+        <a href="#" class="hover:text-white">X / TWITTER</a>
+      </div>
+      <div class="font-mono text-[10px] tracking-widest">NO CHEAP SHIT. NO FADING. NO APOLOGIES.</div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div id="product-modal" onclick="if (event.target.id === 'product-modal') closeProductModal()" 
+       class="hidden fixed inset-0 z-[100] bg-black/90 items-center justify-center p-4 md:p-8">
+    <div onclick="event.stopImmediatePropagation()" 
+         class="modal bg-[#121214] border border-[#2a2a2f] w-full max-w-4xl rounded-2xl overflow-hidden">
+      <div id="product-modal-content" class="p-6 md:p-9">
+        <!-- JS injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" onclick="if (event.target.id === 'cart-drawer') closeCartDrawer()"
+       class="hidden fixed inset-0 z-[110] bg-black/70 items-end md:items-stretch justify-end">
+    <div onclick="event.stopImmediatePropagation()" 
+         class="cart-drawer bg-[#121214] border-l border-[#1f1f23] w-full md:w-[440px] h-[96vh] md:h-full flex flex-col">
+      
+      <div class="flex items-center justify-between px-6 py-5 border-b border-[#1f1f23]">
+        <div class="font-semibold tracking-wide text-lg">YOUR CART</div>
+        <button onclick="closeCartDrawer()" class="text-3xl text-[#9a9aa0] hover:text-white leading-none">&times;</button>
+      </div>
+
+      <div id="cart-content" class="flex-1 p-6 flex flex-col overflow-auto">
+        <!-- JS injected content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL REMOVED -->
+  <!-- Real payments now use Stripe Checkout (redirect) -->
+
+  <!-- CUSTOM ORDER MODAL -->
+  <div id="custom-modal" onclick="if (event.target.id === 'custom-modal') closeCustomModal()"
+       class="hidden fixed inset-0 z-[130] bg-black/85 items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" class="modal w-full max-w-lg bg-[#121214] border border-[#2a2a2f] rounded-2xl p-8">
+      <div class="flex justify-between mb-6">
+        <div>
+          <div class="font-semibold text-2xl tracking-tight">START A CUSTOM PROJECT</div>
+          <div class="text-[#9a9aa0] text-sm">Tell us what you need. We’ll send a proof fast.</div>
+        </div>
+        <button onclick="closeCustomModal()" class="text-3xl leading-none text-[#9a9aa0]">&times;</button>
+      </div>
+
+      <form onsubmit="submitCustomOrder(event)">
+        <div class="space-y-4">
+          <input id="custom-name" type="text" placeholder="YOUR NAME" required class="input w-full">
+          <input id="custom-email" type="email" placeholder="EMAIL" required class="input w-full">
+          
+          <div>
+            <div class="text-xs text-[#9a9aa0] mb-1.5 tracking-wider">PROJECT TYPE</div>
+            <select class="input w-full">
+              <option>Car / Truck Decal</option>
+              <option>Business Signage / Lettering</option>
+              <option>Motorcycle or Helmet Graphics</option>
+              <option>Custom Shape / One-Off</option>
+              <option>Fleet / Multiple Vehicles</option>
+            </select>
+          </div>
+          
+          <div>
+            <div class="text-xs text-[#9a9aa0] mb-1.5 tracking-wider">DESCRIBE WHAT YOU WANT</div>
+            <textarea id="custom-project" rows="4" required placeholder="Size, colors, text, vibe, reference photos, etc..." class="input w-full"></textarea>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-7">
+          <button type="button" onclick="closeCustomModal()" class="btn btn-secondary flex-1">CANCEL</button>
+          <button type="submit" class="btn btn-primary flex-1">SEND TO PRODUCTION</button>
+        </div>
+        <div class="text-center text-[10px] text-[#666] mt-4 tracking-widest">WE REPLY WITH A PROOF WITHIN 4 HOURS (BUSINESS DAYS)</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL (dynamic) -->
+  <div id="success-modal" class="hidden fixed inset-0 z-[140] bg-black/85 items-center justify-center"></div>
+
+  <!-- Toast container (JS adds) -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-[200] flex flex-col gap-2"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  
+  <!-- Small inline enhancement for contact form -->
+  <script>
+    function submitContactForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'SENDING...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = 'MESSAGE SENT';
+        form.reset();
+        
+        setTimeout(() => {
+          showToast('Thanks. We’ll be in touch within a few hours.');
+          btn.textContent = original;
+          btn.disabled = false;
+        }, 1400);
+      }, 850);
+    }
+
+    // Keyboard support for search
+    document.addEventListener('keydown', function(e) {
+      if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+        e.preventDefault();
+        const search = document.getElementById('search-input');
+        if (search) search.focus();
+      }
+    });
+  </script>
+</body>
+</html>

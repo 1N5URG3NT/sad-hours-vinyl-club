@@ -1,4 +1,5 @@
 [build]
+  publish = "."
   functions = "netlify/functions"
 
 [functions]
@@ -8,10 +9,3 @@
   from = "/success"
   to = "/success.html"
   status = 200
-
-# Optional: Pretty URLs
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]} # not used yet

@@ -1,13 +1,13 @@
 :root {
-  --bg: #030304;
+  --bg: #020203;
   --surface: #080809;
   --surface-2: #101014;
-  --border: rgba(255,255,255,0.13);
-  --text: #ffffff;
-  --muted: rgba(255,255,255,0.62);
-  --dim: rgba(255,255,255,0.38);
-  --holo: linear-gradient(115deg, #ffffff 0%, #dce9ff 18%, #f7dcff 38%, #fff9e8 55%, #d8fff8 75%, #ffffff 100%);
-  --holo-strong: linear-gradient(135deg, #ffffff, #bfe7ff, #f3c9ff, #fff7d6, #d4fff7, #ffffff);
+  --border: rgba(255,255,255,.14);
+  --text: #f6f6f7;
+  --muted: rgba(255,255,255,.58);
+  --soft: rgba(255,255,255,.08);
+  --holo: linear-gradient(115deg, #ffffff 0%, #eff7ff 18%, #f9e8ff 36%, #ffffff 52%, #e2fff7 70%, #edf2ff 88%, #ffffff 100%);
+  --holo-strong: linear-gradient(115deg, #ffffff 0%, #dcecff 18%, #ffe1fb 38%, #ffffff 56%, #d6fff5 76%, #ffffff 100%);
 }
 
 * { box-sizing: border-box; }
@@ -259,4 +259,191 @@ select.input { appearance: none; background-image: url("data:image/svg+xml,%3Csv
   .hero-title { letter-spacing: -2.5px; }
   .hero-logo { width: min(520px, 112%); }
   .why-card { padding: 28px; }
+}
+
+
+/* ============================================
+   V2 CLEANUP — transparent logo, lighter pearl holo,
+   tighter/even section layout
+   ============================================ */
+
+.site-nav {
+  background: rgba(2,2,3,0.92);
+}
+
+.nav-logo {
+  width: 74px;
+  height: 46px;
+  object-fit: contain;
+  background: transparent !important;
+}
+
+.hero {
+  min-height: 920px;
+  padding-top: 110px;
+  padding-bottom: 86px;
+}
+
+.hero .grid {
+  grid-template-columns: 1fr !important;
+  align-items: center;
+  justify-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.hero .order-1,
+.hero .order-2,
+.hero .lg\:order-1,
+.hero .lg\:order-2 {
+  order: unset !important;
+}
+
+.hero-logo-wrap {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hero-logo-wrap:before {
+  inset: 18% 12% 12% 12%;
+  opacity: .065;
+  filter: blur(48px);
+}
+
+.hero-logo {
+  width: min(860px, 94vw);
+  max-height: 455px;
+  object-fit: contain;
+  background: transparent !important;
+  filter: drop-shadow(0 0 11px rgba(255,255,255,.18)) drop-shadow(0 0 34px rgba(255,255,255,.08));
+}
+
+.hero > .max-w-7xl > .grid > div:not(.hero-logo-wrap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+}
+
+.hero-title {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  max-width: 720px;
+}
+
+.hero-shine {
+  opacity: .26;
+}
+
+.hero-grid {
+  opacity: .13;
+}
+
+.holo-text {
+  filter: brightness(1.35) saturate(0.95);
+  text-shadow: none;
+}
+
+.btn-holo {
+  background: linear-gradient(#050506,#050506) padding-box, var(--holo-strong) border-box;
+  box-shadow: 0 0 16px rgba(255,255,255,.08);
+}
+
+.btn-holo:hover {
+  box-shadow: 0 0 26px rgba(255,255,255,.14);
+}
+
+#shop,
+#gallery,
+#faq {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
+
+.panel-section > div {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important;
+}
+
+.why-card {
+  padding: clamp(28px, 4vw, 56px);
+}
+
+.process-card,
+.stat-card,
+.gallery-tile,
+.product-card {
+  height: 100%;
+}
+
+.process-card {
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-card p {
+  margin-top: auto;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .p-5 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .p-5 > div:last-child {
+  margin-top: auto;
+}
+
+.product-card .image-container {
+  background: #030304;
+}
+
+.product-card img[src*="logo-transparent"] {
+  object-fit: contain;
+  padding: 34px;
+}
+
+.gallery-tile {
+  min-height: 280px;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-tile:before {
+  opacity: .065;
+  background: radial-gradient(circle at 68% 20%, rgba(255,255,255,.35), transparent 30%), var(--holo);
+}
+
+.trust-bar,
+.panel-section,
+.footer {
+  border-color: rgba(255,255,255,.09);
+}
+
+@media (min-width: 1024px) {
+  .hero .flex.flex-wrap.gap-4.mt-9,
+  .hero .flex.flex-wrap.gap-x-8 {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo { width: 62px; height: 40px; }
+  .hero { min-height: 820px; padding-top: 104px; padding-bottom: 64px; }
+  .hero-logo { width: min(660px, 108vw); max-height: 360px; }
+  .hero-title { letter-spacing: -2.2px; }
+  #shop, #gallery, #faq { padding-top: 72px !important; padding-bottom: 72px !important; }
+  .panel-section > div { padding-top: 72px !important; padding-bottom: 72px !important; }
 }

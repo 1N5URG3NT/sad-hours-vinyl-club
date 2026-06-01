@@ -447,3 +447,49 @@ select.input { appearance: none; background-image: url("data:image/svg+xml,%3Csv
   #shop, #gallery, #faq { padding-top: 72px !important; padding-bottom: 72px !important; }
   .panel-section > div { padding-top: 72px !important; padding-bottom: 72px !important; }
 }
+
+
+/* ============================================
+   V3 NAV FIX — full logo was too detailed/square for nav
+   Keep the big logo in the hero; use a clean cuttable SH mark in header.
+   ============================================ */
+.brand-lockup { min-width: 0; }
+.nav-mark {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.22);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.035) 48%, rgba(255,255,255,.09)),
+    #050506;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.65), 0 0 24px rgba(220,235,255,.06);
+}
+.nav-mark:before {
+  content: '';
+  position: absolute;
+  inset: -80%;
+  background: conic-gradient(from 115deg, transparent 0 20%, rgba(255,255,255,.55), rgba(230,246,255,.45), rgba(255,220,249,.38), transparent 62% 100%);
+  opacity: .33;
+  animation: slowSpin 13s linear infinite;
+}
+.nav-mark span {
+  position: relative;
+  z-index: 1;
+  font-weight: 1000;
+  letter-spacing: -2px;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255,255,255,.25);
+}
+.nav-logo { display: none !important; }
+
+@media (max-width: 420px) {
+  .brand-lockup .text-lg { font-size: 15px; }
+  .brand-lockup .text-\[9px\] { font-size: 8px; letter-spacing: 2px; }
+  .nav-mark { width: 40px; height: 40px; flex-basis: 40px; border-radius: 10px; }
+}

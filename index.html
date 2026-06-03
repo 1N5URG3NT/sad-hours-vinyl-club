@@ -7,7 +7,7 @@
   <meta name="description" content="Custom vinyl decals, windshield banners, stickers and signage. Black, white and pearl holographic vinyl style. Built in Queensland, shipped Australia wide.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -62,27 +62,37 @@
   <header id="top" class="hero min-h-[100dvh] flex items-center pt-24 overflow-hidden">
     <div class="hero-grid"></div>
     <div class="hero-shine"></div>
+    <div class="hero-scanline"></div>
     <div class="max-w-7xl mx-auto px-5 md:px-6 w-full relative z-10">
       <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-10 items-center">
-        <div class="order-2 lg:order-1">
+        <div class="order-2 lg:order-1 cm-frame">
+          <span class="cm cm-tl"></span><span class="cm cm-tr"></span><span class="cm cm-bl"></span><span class="cm cm-br"></span>
+          <div class="hero-coord"><div class="hero-coord-dot"></div>27.4705°S 153.0260°E / SYS_ACTIVE / CUT_READY</div>
           <div class="eyebrow mb-5">QUEENSLAND BUILT • AUSTRALIA WIDE</div>
-          <h1 class="hero-title text-5xl md:text-7xl xl:text-8xl font-black tracking-[-4px] leading-[0.88] mb-7">
+          <h1 class="hero-title text-5xl md:text-7xl xl:text-8xl font-black tracking-[5px] leading-[0.92] mb-7">
             CUSTOM VINYL<br><span class="holo-text">WITH ATTITUDE.</span>
           </h1>
           <p class="max-w-xl text-lg md:text-xl text-white/70 leading-relaxed">
             Decals, windshield banners, business signage and sticker packs cut for cars, shops, crews and late-night builds.
           </p>
           <div class="flex flex-wrap gap-4 mt-9">
-            <a href="#shop" class="btn btn-primary text-sm md:text-base px-8 py-4">SHOP DECALS</a>
-            <button onclick="openCustomModal()" class="btn btn-secondary text-sm md:text-base px-8 py-4">GET A CUSTOM QUOTE</button>
+            <a href="#shop" class="btn btn-primary btn-angular text-sm md:text-base px-8 py-4">SHOP DECALS</a>
+            <button onclick="openCustomModal()" class="btn btn-secondary btn-angular text-sm md:text-base px-8 py-4">GET A CUSTOM QUOTE</button>
           </div>
           <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs mt-10 text-white/50 tracking-[1.9px] font-black">
             <div>WINDOW BANNERS</div>
             <div>BUSINESS DECALS</div>
             <div>PEARL / HOLO OPTIONS</div>
           </div>
+          <div class="tactical-status">
+            <div class="tactical-status-item">SYS_READY</div>
+            <div class="tactical-status-item">CUT_ON_DEMAND</div>
+            <div class="tactical-status-item">QLD_ORIGIN</div>
+            <div class="tactical-status-item">AUS_DEPLOY</div>
+          </div>
         </div>
         <div class="order-1 lg:order-2 hero-logo-wrap">
+          <div class="hero-crosshair"><div class="hero-crosshair-ring"></div></div>
           <img src="assets/logo.png" alt="Sad Hours Vinyl Club" class="hero-logo">
         </div>
       </div>
@@ -257,6 +267,7 @@
 
   <div id="success-modal" class="hidden fixed inset-0 z-[140] bg-black/85 items-center justify-center"></div>
   <div id="toast-container" class="fixed bottom-5 right-5 z-[200] flex flex-col gap-2"></div>
+  <div class="grain-overlay"></div>
   <script src="js/app.js"></script>
   <script>
     function submitContactForm(e) {

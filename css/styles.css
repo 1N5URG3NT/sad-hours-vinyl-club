@@ -31,7 +31,7 @@ body::before {
       rgba(0,0,0,0.82),
       rgba(0,0,0,0.88)
     ),
-    url("assets/backgrounds/roses-wallpaper.png");
+    url("../assets/backgrounds/roses-wallpaper.png")
 
   background-repeat: repeat-y;
   background-position: center top;
